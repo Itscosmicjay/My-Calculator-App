@@ -7,77 +7,84 @@ namespace My_Calculator_App
         static void Main(string[] args)
         {
             double num1, num2, num3, num4, num5, num6, num7, num8, a, b, c;
-            int num9, num10;
+            int num9, num10, num0;
+            Console.WriteLine("What operations do you want to carry out");
 
-            Console.WriteLine("Addition");
+            Console.Write("1:Addition 2:Subtraction 3:Multiplication 4:DIvision 5:Exponential 6:Quadratic eqution(formula method):");
+            num0= Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Enter a number:");
-            num1 = Convert.ToDouble(Console.ReadLine());
+            if (num0 == 1)
+            {
+                Console.Write("Enter a number:");
+                num1 = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Enter another number:");
-            num2 = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter another number:");
+                num2 = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine(Addition(num1, num2));
+                Console.WriteLine(Addition(num1, num2));
+            }
+            else if (num0 == 2)
+            {
+                Console.Write("Enter a number:");
+                num3 = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Subtraction");
+                Console.Write("Enter another number:");
+                num4 = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Enter a number:");
-            num3 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine(Substraction(num3, num4));
+            }
+            else if (num0 == 3)
+            {
+                Console.Write("Enter a number:");
+                num5 = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Enter another number:");
-            num4 = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter another number:");
+                num6 = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine(Substraction(num3, num4));
+                Console.WriteLine(Multiplication(num5, num6));
+            }
+            else if (num0 == 4)
+            {
+                Console.Write("Enter the numerator:");
+                num7 = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Multiplication");
+                Console.Write("Enter the denominator:");
+                num8 = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Enter a number:");
-            num5 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine(Division(num7, num8));
+            }
+            else if (num0 == 5)
+            {
+                Console.Write("Enter a number:");
+                num9 = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Enter another number:");
-            num6 = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter another number:");
+                num10 = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine(Multiplication(num5, num6));
+                Console.WriteLine(Exponential(num9, num10));
+            }
+            else if (num0 == 6)
+            {
+                Console.Write("b:");
+                b = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Division");
+                Console.Write("a:");
+                a = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Enter the numerator:");
-            num7 = Convert.ToDouble(Console.ReadLine());
+                Console.Write("c:");
+                c = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Enter the denominator:");
-            num8 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine(FormularMethod(b, a, c));
 
-            Console.WriteLine(Division(num7, num8));
-
-            Console.WriteLine("Exponential");
-
-            Console.Write("Enter a number:");
-            num9 = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Enter another number:");
-            num10 = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine(Exponential(num9, num10));
-
-            Console.WriteLine("Quadratic Equation using formula method");
-
-            Console.Write("Enter the value of b:");
-            b = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Enter the value of a:");
-            a = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Enter the value of c:");
-            c = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine(FormularMethod(b, a, c));
-
-            Console.WriteLine(FormularMethod(b, a, c));
+                Console.WriteLine(FormularMethod(b, a, c));
+            }
+            else
+            {
+                Console.WriteLine("Please select one of the options");
+            }
 
             Console.ReadLine();
         }
-
-
         private static double Addition(double a, double b)
         {
             double answer = a + b;
@@ -110,6 +117,6 @@ namespace My_Calculator_App
             string Main = "x1 : " +answer + " x2 : " +answer1;
             return Main;
         }
-    }
+    } 
 }
 
