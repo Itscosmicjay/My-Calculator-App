@@ -6,7 +6,7 @@ namespace My_Calculator_App
     {
         static void Main(string[] args)
         {
-            double num1, num2, num3, num4, num5, num6, num7, num8, a, b, c;
+            double  num3, num4, num5, num6, num7, num8, a, b, c;
             int num9, num10, num0;
             Console.WriteLine("What operations do you want to carry out");
 
@@ -15,13 +15,7 @@ namespace My_Calculator_App
 
             if (num0 == 1)
             {
-                Console.Write("Enter a number:");
-                num1 = Convert.ToDouble(Console.ReadLine());
-
-                Console.Write("Enter another number:");
-                num2 = Convert.ToDouble(Console.ReadLine());
-
-                Console.WriteLine(Addition(num1, num2));
+                Console.WriteLine(Addition(a, b));
             }
             else if (num0 == 2)
             {
@@ -83,12 +77,26 @@ namespace My_Calculator_App
                 Console.WriteLine("Please select one of the options");
             }
 
+
+            
+
+ 
             Console.ReadLine();
         }
+
+
         private static double Addition(double a, double b)
         {
+            Console.Write("Enter a number:");
+            a= Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter another number:");
+            b = Convert.ToDouble(Console.ReadLine());
+
             double answer = a + b;
             return answer;
+
+            
         }
         private static double Substraction(double a, double b)
         {
