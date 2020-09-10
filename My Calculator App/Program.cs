@@ -6,87 +6,57 @@ namespace My_Calculator_App
     {
         static void Main(string[] args)
         {
-            double  num3, num4, num5, num6, num7, num8, a, b, c;
-            int num9, num10, num0;
+            
+            int num9, num10, userInput;
+
             Console.WriteLine("What operations do you want to carry out");
 
             Console.Write("1:Addition 2:Subtraction 3:Multiplication 4:DIvision 5:Exponential 6:Quadratic eqution(formula method):");
-            num0= Convert.ToInt32(Console.ReadLine());
+            userInput= Convert.ToInt32(Console.ReadLine());
 
-            if (num0 == 1)
+
+            if (userInput == 1)
+
             {
-                Console.WriteLine(Addition(a, b));
+                Addition();
             }
-            else if (num0 == 2)
+            else if (userInput == 2)
+
             {
-                Console.Write("Enter a number:");
-                num3 = Convert.ToDouble(Console.ReadLine());
-
-                Console.Write("Enter another number:");
-                num4 = Convert.ToDouble(Console.ReadLine());
-
-                Console.WriteLine(Substraction(num3, num4));
+                Substraction();
             }
-            else if (num0 == 3)
+            else if (userInput == 3)
+
             {
-                Console.Write("Enter a number:");
-                num5 = Convert.ToDouble(Console.ReadLine());
-
-                Console.Write("Enter another number:");
-                num6 = Convert.ToDouble(Console.ReadLine());
-
-                Console.WriteLine(Multiplication(num5, num6));
+                Multiplication();
             }
-            else if (num0 == 4)
+            else if (userInput == 4)
+
             {
-                Console.Write("Enter the numerator:");
-                num7 = Convert.ToDouble(Console.ReadLine());
-
-                Console.Write("Enter the denominator:");
-                num8 = Convert.ToDouble(Console.ReadLine());
-
-                Console.WriteLine(Division(num7, num8));
+                Division();
             }
-            else if (num0 == 5)
+            else if (userInput == 5)
+
             {
-                Console.Write("Enter a number:");
-                num9 = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("Enter another number:");
-                num10 = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine(Exponential(num9, num10));
+                Exponential();
             }
-            else if (num0 == 6)
+            else if (userInput == 6)
+
             {
-                Console.Write("b:");
-                b = Convert.ToDouble(Console.ReadLine());
-
-                Console.Write("a:");
-                a = Convert.ToDouble(Console.ReadLine());
-
-                Console.Write("c:");
-                c = Convert.ToDouble(Console.ReadLine());
-
-                Console.WriteLine(FormularMethod(b, a, c));
-
-                Console.WriteLine(FormularMethod(b, a, c));
+            FormularMethod();
             }
             else
             {
                 Console.WriteLine("Please select one of the options");
             }
 
-
-            
-
- 
             Console.ReadLine();
         }
 
 
-        private static double Addition(double a, double b)
+        private static void Addition()
         {
+            double a, b;
             Console.Write("Enter a number:");
             a= Convert.ToDouble(Console.ReadLine());
 
@@ -94,36 +64,68 @@ namespace My_Calculator_App
             b = Convert.ToDouble(Console.ReadLine());
 
             double answer = a + b;
-            return answer;
-
+            console.WriteLine(answer);
             
         }
-        private static double Substraction(double a, double b)
+        private static void Substraction()
         {
+            double a, b;
+            Console.Write("Enter a number:");
+            a= Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter another number:");
+            b = Convert.ToDouble(Console.ReadLine());
             double answer = a - b;
-            return answer;
+            console.WriteLine(answer);
         }
-        private static double Multiplication(double a, double b)
+        private static void Multiplication()
         {
+            double a, b;
+            Console.Write("Enter a number:");
+            a= Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter another number:");
+            b = Convert.ToDouble(Console.ReadLine());
             double answer = a * b;
-            return answer;
+            console.WriteLine(answer);
         }
-        private static double Division(double a, double b)
+        private static void Division()
         {
+            double a, b;
+            Console.Write("Enter a number:");
+            a= Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter another number:");
+            b = Convert.ToDouble(Console.ReadLine());
             double answer = a / b;
-            return answer;
+            console.WriteLine(answer);
         }
-        private static int Exponential(int a, int b)
+        private static void Exponential()
         {
+            int a, b;
+            Console.Write("Enter a number:");
+            a= Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter another number:");
+            b = Convert.ToDouble(Console.ReadLine());
             int answer = a^b;
-            return answer;
+            console.WriteLine(answer);
         }
-        private static string FormularMethod(double b, double a , double c)
+        private static void FormularMethod()
         {
+            double a, b, c;
+            Console.Write("b:");
+                b = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("a:");
+                a = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("c:");
+                c = Convert.ToDouble(Console.ReadLine());
             double answer = ((-b) + Math.Sqrt((b * b) - (4 * a * c) / (2 * a)));
             double answer1 = ((-b) - Math.Sqrt((b * b) - (4 * a * c) / (2 * a)));
             string Main = "x1 : " +answer + " x2 : " +answer1;
-            return Main;
+           console.WriteLine(Main);
         }
     } 
 }
